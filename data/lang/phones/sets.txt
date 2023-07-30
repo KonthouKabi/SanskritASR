@@ -1,0 +1,79 @@
+SIL SIL_B SIL_E SIL_I SIL_S
+spn spn_B spn_E spn_I spn_S
+. ._B ._E ._I ._S
+! !_B !_E !_I !_S
+- -_B -_E -_I -_S
+_ __B __E __I __S
+? ?_B ?_E ?_I ?_S
+: :_B :_E :_I :_S
+( (_B (_E (_I (_S
+) )_B )_E )_I )_S
+; ;_B ;_E ;_I ;_S
+|k_B |k_E |k_I |k_S
+|K_B |K_E |K_I |K_S
+|g_B |g_E |g_I |g_S
+|j_B |j_E |j_I |j_S
+|x_B |x_E |x_I |x_S
+f_B f_E f_I f_S
+|X_B |X_E |X_I |X_S
+k_B k_E k_I k_S
+K_B K_E K_I K_S
+g_B g_E g_I g_S
+G_B G_E G_I G_S
+w_B w_E w_I w_S
+h_B h_E h_I h_S
+c_B c_E c_I c_S
+|c_B |c_E |c_I |c_S
+C_B C_E C_I C_S
+j_B j_E j_I j_S
+J_B J_E J_I J_S
+y_B y_E y_I y_S
+Y_B Y_E Y_I Y_S
+q_B q_E q_I q_S
+V_B V_E V_I V_S
+x_B x_E x_I x_S
+X_B X_E X_I X_S
+N_B N_E N_I N_S
+S_B S_E S_I S_S
+r_B r_E r_I r_S
+t_B t_E t_I t_S
+T_B T_E T_I T_S
+d_B d_E d_I d_S
+D_B D_E D_I D_S
+n_B n_E n_I n_S
+l_B l_E l_I l_S
+L_B L_E L_I L_S
+|L_B |L_E |L_I |L_S
+p_B p_E p_I p_S
+P_B P_E P_I P_S
+b_B b_E b_I b_S
+B_B B_E B_I B_S
+m_B m_E m_I m_S
+z_B z_E z_I z_S
+s_B s_E s_I s_S
+v_B v_E v_I v_S
+|v_B |v_E |v_I |v_S
+|y_B |y_E |y_I |y_S
+a_B a_E a_I a_S
+Aː_B Aː_E Aː_I Aː_S
+|A_B |A_E |A_I |A_S
+i_B i_E i_I i_S
+I:_B I:_E I:_I I:_S
+u_B u_E u_I u_S
+Uː_B Uː_E Uː_I Uː_S
+R_B R_E R_I R_S
+eː_B eː_E eː_I eː_S
+e_B e_E e_I e_S
+Eː_B Eː_E Eː_I Eː_S
+|E_B |E_E |E_I |E_S
+n~_B n~_E n~_I n~_S
+M_B M_E M_I M_S
+H_B H_E H_I H_S
+oː_B oː_E oː_I oː_S
+o_B o_E o_I o_S
+Oː_B Oː_E Oː_I Oː_S
+|o_B |o_E |o_I |o_S
+`a_B `a_E `a_I `a_S
+$_B $_E $_I $_S
+rr_B rr_E rr_I rr_S
+RR_B RR_E RR_I RR_S

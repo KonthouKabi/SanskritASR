@@ -1,0 +1,13 @@
+# Object Files
+*.pyc
+*.obj
+*.o
+*.dSYM
+*.DS_Store
+# Audio files
+SanskritASR_audio/
+# Generative Folders
+mfcc/
+exp/
+conf/
+

@@ -1,0 +1,42 @@
+This note includes Kaldi installation and traing data fixing during
+
+-> SRILM installation
+  - manually download
+  - create the folder 'srilm' in kaldi/tools (so kaldi/tools/srilm)
+  - extract the zip file in kaldi/tools/srilm
+    > mv srilm.tar.gz users/kabi/kaldi/tools/srilm
+    > cd users/kabi/kaldi/tools/srilm
+    > tar xvf srilm.tar.gz
+  - edit and set path around line no 7:
+    > nano Makefile
+    > SILM = /home/kabi/kaldi/tools/srilm ( save and exit)
+    > sudo tsch (may use another shell; or sudo app-get install tsch
+    > sudo make NO_TCL=1 MACHINE_TYPE=ppc64 (your machine type: to check machine type open another terminal and command 'uname -a')
+  - That's all. now check SRILM installation:
+    > sudo ./bin/ppc64/ngram-count -help
+  - now set path to global environment:
+    > nano ~/.bashrc
+    > export path="/home/kabi/kaldi/tools/srilm/bin/ppc63:PATH" (at the end of the line of bashrc; save and exit)
+    > source ~/.bashrc
+
+-> Validate Data
+  - utils/validate_data_dir.sh
+
+-> Sorting Data
+  - Ensure that all relevant data files, including utt2spk, spk2utt, text, and feats.scp (may escape this one), are sorted in ascending order.
+  - sort -o data/test/utt2spk data/test/utt2spk
+
+-> Fix Data
+  -> utils/fix_data_dir.sh
+  -> this should be run if data validating and sorting could not work and fix
+
+-> Testing Steps
+  - Feature extraction (eg. MFCCs) feats.scp (example: compute-mfcc-feats --num-mel-bins=40 scp:data/test/wav.scp data/test/feats)
+  	steps/make_mfcc.sh --nj 1 --cmd run.pl data/test exp/make_mfcc/test mfcc
+	steps/compute_cmvn_stats.sh data/test exp/make_mfcc/test mfcc
+  - Langauge Model
+  - Decoding
+  - Scoring and Evaluation
+  
+ 
+
