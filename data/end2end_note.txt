@@ -27,13 +27,21 @@ This note includes Kaldi installation and traing data fixing during
   - sort -o data/test/utt2spk data/test/utt2spk
 
 -> Fix Data
-  -> utils/fix_data_dir.sh
+  -> utils/fix_data_dir.sh data/train
+  -> utils/fix_data_dir.sh data/test
   -> this should be run if data validating and sorting could not work and fix
 
 -> Testing Steps
   - Feature extraction (eg. MFCCs) feats.scp (example: compute-mfcc-feats --num-mel-bins=40 scp:data/test/wav.scp data/test/feats)
   	steps/make_mfcc.sh --nj 1 --cmd run.pl data/test exp/make_mfcc/test mfcc
 	steps/compute_cmvn_stats.sh data/test exp/make_mfcc/test mfcc
+  - Testing syntax
+      -> steps/decode.sh --nj <num_jobs> <graph_dir> <data_dir> <decode_dir>
+      -> steps/decode.sh --nj 4 exp/tri3/graph data/test exp/tri3/decode_test
+      
+      -> stream/online decoding
+      -> one-shot decoding
+
   - Langauge Model
   - Decoding
   - Scoring and Evaluation

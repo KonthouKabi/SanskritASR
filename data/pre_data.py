@@ -4,8 +4,18 @@ from phonemiser import phonemise as phm
 
 # your are at: kaldi/egs/digits/data
 
-#change the last folder name accordingly like /train or /test whenever requires
-root_path="/home/kkabikhanganba/kaldi_new/kaldi/egs/digits/digits_audio/"
+# change the last folder name accordingly like /train or /test whenever requires
+# get current path
+#root_path="/home/kkabikhanganba/kaldi_new/kaldi/egs/SanskritASR/SanskritASR_audio/"
+current_path = os.getcwd()
+
+# split pathe in components based on os specific convinent
+path_components = current_path.split(os.path.sep)
+
+#remove the last folder (go one folder back)
+parent_path = os.path.sep.join(path_components[:-1])
+
+root_path = parent_path+"/audio_data/"
 
 
 
@@ -16,7 +26,8 @@ lexicon_lines=[]
 
 #Switching Statements
 #***********************************
-print("********************provide test or train*************************")
+print("********************type the dataset name given above:*************************\n")
+
 data_set_name = input()
 subset_dir_name = data_set_name+"/" #switch between "train/" and "test/"
 
@@ -63,10 +74,14 @@ for root, folds, files in os.walk(root_path + subset_dir_name):
 			audio_utterranceID = audio_utterranceID.replace("/","_").replace("..wav","").replace(".wav","")
 			
 			audio_path = os.path.join(root,aFile)
+			audio_path = audio_path.replace("\u200c","").replace("\u200d","")
 			#audio_path = audio_path.replace("..wav",".wav")
 			
 			#print(audio_utterranceID)
 			#print(audio_path)
+			
+			audio_utterranceID= audio_utterranceID.replace("\u200c","").replace("\u200d","")
+			audio_path=audio_path.replace("\u200c","").replace("\u200d","")
 			
 			all_audios.append(audio_utterranceID+" "+audio_path)
 			audio_uttr_id.append(audio_utterranceID)
@@ -91,6 +106,7 @@ for root, folds, files in os.walk(root_path + subset_dir_name):
 				print("reading and exporting \"c. text\" from:",aFile)
 				
 				currentPath=os.path.relpath(os.path.join(root),root_path+subset_dir_name)
+				urrentPath = currentPath.replace("\u200c","").replace("\u200d","")
 				
 				with open(os.path.join(root,aFile),"r",encoding="utf-8") as input_file:
 				  #print("len of input file",len(input_file))
@@ -101,10 +117,11 @@ for root, folds, files in os.walk(root_path + subset_dir_name):
 				    for aLine in input_file:
 				      audio_id = currentPath+"_"+aLine[0:aLine.index("\t")]
 				      if audio_id in audio_uttr_id:
-				        output.write(audio_id+" "+phm.phonemise(aLine[aLine.index("\t")+1:-1],delimiter="")+"\n")
+				        output.write(audio_id+" "+phm.phonemise(aLine[aLine.index("\t")+1:-1],delimiter="").replace("\u200c","").replace("\u200d","")+"\n")
 				        utterance = aLine[aLine.index("\t")+1:-1]
-				        all_corpus.append(phm.phonemise(utterance,delimiter=""))
-				        all_lexicon.append(utterance)
+				        utterance = utterance.replace("\u200c","").replace("\u200d","")
+				        all_corpus.append(phm.phonemise(utterance,delimiter="").replace("\u200c","").replace("\u200d",""))
+				        all_lexicon.append(utterance.replace("\u200c","").replace("\u200d",""))
 				      else:
 				        print("text: audio id not exist",audio_id)
 				  
@@ -115,6 +132,7 @@ for root, folds, files in os.walk(root_path + subset_dir_name):
     				    
 				    for aLine in input_file:
 				      audio_id = currentPath+"_"+aLine[0:aLine.index("\t")]
+				      audio_id = audio_id.replace("\u200c","").replace("\u200d","")
 				      
 				      if audio_id in audio_uttr_id:
 				        output.write(audio_id+" "+currentPath+"\n")
@@ -131,12 +149,12 @@ for root, folds, files in os.walk(root_path + subset_dir_name):
 			
 #creating wav.scp
 with open (subset_dir_name+"wav.scp","w",encoding='utf-8') as file:
-	file.write("\n".join(str(element) for element in all_audios))
+	file.write("\n".join(str(element).replace("\u200c","").replace("\u200d","").strip() for element in all_audios))
 	print("......................",subset_dir_name+"wav.scp was created")
 	
 # creating local/corpus.txt
 with open ("local/corpus.txt","a",encoding='utf-8') as file:
-	file.write("\n".join(str(element) for element in all_corpus))
+	file.write("\n".join(str(element).replace("\u200c","").replace("\u200d","").strip() for element in all_corpus))
 	print("......................","local/corpus.txt was created")
 	
 # creating unique words
@@ -157,7 +175,7 @@ print("words train set is------------------------------------------------------"
 for aSent in all_lexicon:
   for aWord in aSent.split():
     aWord = aWord.strip()
-    aWord = aWord.replace("।","").replace(",","").replace("!","")
+    aWord = aWord.replace("।","").replace(",","").replace("!","").replace("\u200c","").replace("\u200d","")
     if (not len(aWord) == 0) and (not aWord == " ") and ("\n" not in aWord) and (aWord not in words) and (phm.phonemise(aWord,delimiter="") not in words_train_set):
       words.append(aWord)
 
@@ -167,10 +185,10 @@ all_lexicon = set(words)
 
 with open ("local/dict/lexicon.txt","a",encoding='utf-8') as file:
   for element in all_lexicon:
-        phonemized_delimiter_space = str(phm.phonemise(str(element), delimiter=" ")).strip()
+        phonemized_delimiter_space = str(phm.phonemise(str(element), delimiter=" ")).strip().replace("\u200c","").replace("\u200d","")
         if not phonemized_delimiter_space:
             phonemized_delimiter_space = "SIL"
-        phonemized_delimiter_empty = str(phm.phonemise(str(element), delimiter="")).strip()
+        phonemized_delimiter_empty = str(phm.phonemise(str(element), delimiter="")).strip().replace("\u200c","").replace("\u200d","")
         lexicon_lines.append(phonemized_delimiter_empty + " " + phonemized_delimiter_space)
 
   

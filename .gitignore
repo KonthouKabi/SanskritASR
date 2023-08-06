@@ -7,7 +7,7 @@
 # Audio files
 SanskritASR_audio/
 # exclude phonemiser
-data/phonemiser.py
+#data/phonemiser.py
 # Generative Folders
 mfcc/
 exp/
