@@ -9,7 +9,7 @@ This note includes Kaldi installation and traing data fixing during
     > tar xvf srilm.tar.gz
   - edit and set path around line no 7:
     > nano Makefile
-    > SILM = /home/kabi/kaldi/tools/srilm ( save and exit)
+    > SRILM = /home/kabi/kaldi/tools/srilm ( save and exit)
     > sudo tsch (may use another shell; or sudo app-get install tsch
     > sudo make NO_TCL=1 MACHINE_TYPE=ppc64 (your machine type: to check machine type open another terminal and command 'uname -a')
   - That's all. now check SRILM installation:

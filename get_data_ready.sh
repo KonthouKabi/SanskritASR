@@ -1,7 +1,10 @@
+#!/bin/bash
 echo "============= getting data ready ==============="
 cd data
 echo "==================== dataset name: train"
-python pre_data.py
+source /home/kkabikhanganba/miniforge3/etc/profile.d/conda.sh
+conda activate kabi || exit 1
+python pre_data.py || exit 1
 echo
 echo "==================== dataset name: test"
 python pre_data.py

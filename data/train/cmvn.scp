@@ -1,5 +1,7 @@
-10 /home/kkabikhanganba/kaldi_new/kaldi/egs/SanskritASR/mfcc/cmvn_train.ark:3
-6 /home/kkabikhanganba/kaldi_new/kaldi/egs/SanskritASR/mfcc/cmvn_train.ark:244
-7 /home/kkabikhanganba/kaldi_new/kaldi/egs/SanskritASR/mfcc/cmvn_train.ark:485
-8 /home/kkabikhanganba/kaldi_new/kaldi/egs/SanskritASR/mfcc/cmvn_train.ark:726
-9 /home/kkabikhanganba/kaldi_new/kaldi/egs/SanskritASR/mfcc/cmvn_train.ark:967
+10 /home/kkabikhanganba/Projects/kaldi/egs/SanskritASR/mfcc/cmvn_train.ark:3
+4 /home/kkabikhanganba/Projects/kaldi/egs/SanskritASR/mfcc/cmvn_train.ark:244
+5 /home/kkabikhanganba/Projects/kaldi/egs/SanskritASR/mfcc/cmvn_train.ark:485
+6 /home/kkabikhanganba/Projects/kaldi/egs/SanskritASR/mfcc/cmvn_train.ark:726
+7 /home/kkabikhanganba/Projects/kaldi/egs/SanskritASR/mfcc/cmvn_train.ark:967
+8 /home/kkabikhanganba/Projects/kaldi/egs/SanskritASR/mfcc/cmvn_train.ark:1208
+9 /home/kkabikhanganba/Projects/kaldi/egs/SanskritASR/mfcc/cmvn_train.ark:1449

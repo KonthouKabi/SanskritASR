@@ -9,7 +9,7 @@ from phonemiser import phonemise as phm
 #root_path="/home/kkabikhanganba/kaldi_new/kaldi/egs/SanskritASR/SanskritASR_audio/"
 current_path = os.getcwd()
 
-# split pathe in components based on os specific convinent
+# split path in components based on os specific convinent
 path_components = current_path.split(os.path.sep)
 
 #remove the last folder (go one folder back)

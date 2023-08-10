@@ -6,10 +6,10 @@
 *.DS_Store
 # Audio files
 SanskritASR_audio/
+audio_data/
 # exclude phonemiser
 #data/phonemiser.py
 # Generative Folders
 mfcc/
 exp/
-conf/
 
